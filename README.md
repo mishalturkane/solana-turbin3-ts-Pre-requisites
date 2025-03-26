@@ -1,5 +1,5 @@
 # solana-turbin3-ts-Pre-requisites
-Now we start- you will:
+In this project you will:
 -Learn how to use @solana/web3.js to create a new keypair
 - Use our Public Key to airdrop ourselves some Solana devnet tokens
 - Make Solana transfers on devnet
