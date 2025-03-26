@@ -13,17 +13,38 @@ let connection = new  Connection("https://api.devnet.solana.com/");
     try{
 
         //Get balance of dev wallet
-        
+     const balance = await connection.getBalance(from.publicKey);
 
         const transcation = new Transaction().add(
             SystemProgram.transfer({
               fromPubkey:from.publicKey, 
               toPubkey: to,
-              lamports: LAMPORTS_PER_SOL/100,
+              lamports: balance,
             })
         );
         transcation.recentBlockhash = (await connection.getLatestBlockhash(`confirmed`)).blockhash;
         transcation.feePayer = from.publicKey;
+
+
+
+        //calculate exact fee rate to transfer entire SOL amount out of account minus fees
+
+       const fees =  (await connection.getFeeForMessage(transcation.compileMessage(),`confirmed`)).value || 0;
+
+       //Remove our transfer instructin to replace it
+       transcation.instructions.pop();
+
+
+       //Now add the nstruction back with correct amountof lamports
+
+
+       transcation.add(
+        SystemProgram.transfer({
+            fromPubkey: from.publicKey,
+            toPubkey: to,
+            lamports: balance-fees,
+        })
+       )
 
         //sign transaction , broadcast ,a and confirm
 
