@@ -1,4 +1,7 @@
 # Solana-Turbin3-ts-Pre-requisites
+
+[Airdrop] (https://explorer.solana.com/tx/5P8WMyWhGDko4k5f3LZyThu7WSmyJdNxwX7f94E5d1ZzLJEguAKyHUFET8qW2km61kqtD2A2akidoTQT88cC8FKJ?cluster=devnet)
+
 In this project you will:
 1. Learn how to use @solana/web3.js to create a new keypair
 2. Use our Public Key to airdrop ourselves some Solana devnet tokens
