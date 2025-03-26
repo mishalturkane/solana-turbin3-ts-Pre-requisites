@@ -1,4 +1,4 @@
-# solana-turbin3-ts-Pre-requisites
+# Solana-Turbin3-ts-Pre-requisites
 In this project you will:
 1. Learn how to use @solana/web3.js to create a new keypair
 2. Use our Public Key to airdrop ourselves some Solana devnet tokens
@@ -26,3 +26,8 @@ touch enroll.ts
 yarn tsc --init --rootDir ./ --outDir ./dist --esModuleInterop --lib ES2019 --module commonjs --resolveJsonModule true --noImplicitAny true
 ```
 
+### Generating a Keypair
+Code the ./keygen.ts file
+```bash
+yarn keygen.ts
+````
